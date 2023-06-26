@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Nav from './nav';
+import Nav from './components/nav';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'; 
+import Footer from './components/footer';
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -14,9 +16,12 @@ function App() {
         <Route path='/update' element={<h1>Update Lisiting Componenet</h1>}></Route>
         <Route path='/logout' element={<h1>logout Lisiting Componenet</h1>}></Route>
         <Route path='/profile' element={<h1>profile Lisiting Componenet</h1>}></Route>
+        <Route path='/signup' element={<Signup/>} > </Route>
+
          </Routes>
-      <h1>E-Dashboard</h1>
+    
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
