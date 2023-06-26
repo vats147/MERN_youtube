@@ -23,6 +23,18 @@
   background-color: skyblue;
 }
 
+.nav-right{
+  text-align: right;
+}
+.logo{
+
+  width: 45px;
+  float: left;
+  border-radius: 50%;
+  margin-top: 3px;
+  margin-left: 20px;
+}
+
 /* Signup page styles */
 .register{
   margin-left: 30%;
