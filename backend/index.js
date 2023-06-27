@@ -66,6 +66,34 @@ app.get("/products", async(req,res)=>{
        {
               res.send({result:"No Products Found"});
        }
+});
+
+app.get("/product/:id/",async (req,res)=>{
+       console.log("serach api called");
+       const result=await Product.findOne({_id:req.params.id});
+       if(!result)
+       {      
+              res.send({result:"No Data Found"})
+       }
+       else
+              res.send(result);
+});
+
+app.put("/product/:id/",async(req,res)=>{
+       let result=await Product.updateOne(
+              {_id:req.params.id},
+              {$set:req.body}       
+       );
+       res.send(result);
+});
+
+
+
+
+app.delete("/product/:id", async (req,res)=>{
+       const result=await Product.deleteOne({_id:req.params.id})
+       res.send(result);
+
 })
 
 
